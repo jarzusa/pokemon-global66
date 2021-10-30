@@ -1,0 +1,23 @@
+[
+  {
+    "name": "inspire",
+    "path": "/inspire",
+    "component": "/home/jose/Documentos/Global66/pokemon-global66/pages/inspire.vue",
+    "chunkName": "pages/inspire",
+    "_name": "_281f8ddc"
+  },
+  {
+    "name": "list",
+    "path": "/list",
+    "component": "/home/jose/Documentos/Global66/pokemon-global66/pages/list.vue",
+    "chunkName": "pages/list",
+    "_name": "_930ed0d4"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/jose/Documentos/Global66/pokemon-global66/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_340edb0a"
+  }
+]

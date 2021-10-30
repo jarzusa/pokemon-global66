@@ -1,0 +1,360 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+
+$breakpoint-size-px: 1268px;
+$max-mobile: 1901px;
+$min-mobile: 1263px;
+
+$min-tablet: 1024;
+$max-tablet: 1280;
+
+$min-mobile-x: 945px;
+$min-mobile-xx: 720px;
+$min-mobile-xxx: 590px;
+$min-mobile-xxxx: 280px;
+
+// Lista de pokedex
+.main-container {
+    max-width: 55% !important;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    ::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
+
+    .v-list {
+        padding: 1%;
+        overflow-y: scroll !important;
+        max-height: 830px;
+    }
+
+    .item {
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-bottom: 5%;
+        font-weight: bold;
+        box-shadow: 1px 1px 10px #cccccc61;
+
+        .text--left {
+            font-family: "Work Sans", sans-serif;
+            font-weight: 337;
+            font-size: 35%;
+            text-align: left;
+            margin: auto;
+        }
+
+        .text--left::first-letter {
+            text-transform: uppercase;
+        }
+
+        .text--rigth {
+            text-align: right;
+            padding: 1% !important;
+        }
+    }
+}
+
+// Descripcion de el pokedex
+.description {
+    padding: 1% 7% 5% 7% !important;
+
+    .pokedex {
+        font-family: "Work Sans", sans-serif;
+        font-size: 1.5em !important;
+        border-bottom: 2px solid #e0e0e0;
+
+        p {
+            font-weight: bold;
+            margin-bottom: auto;
+        }
+    }
+    .pokedex[bold] {
+        font-weight: 400 !important;
+    }
+
+    .pokedex::first-letter {
+        text-transform: uppercase;
+    }
+}
+
+.v-card__actions {
+    padding: 1% 7% 5% 7% !important;
+}
+
+.back-wallpaper-pokedex {
+    padding-bottom: 5%;
+    background-image: url("../assets/images/wallpaperbetter.jpg") !important;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.btn-shared {
+    height: 3em !important;
+}
+
+.btn-filter {
+    height: 4em !important;
+    .v-btn__content {
+        font-family: "Work Sans", sans-serif !important;
+        font-weight: 500 !important;
+        color: white !important;
+    }
+}
+
+// Dialogo de ver pokedex
+.dialog-pokedex {
+    max-width: 100% !important;
+}
+//Icono de pokemon
+.imgPokedex {
+    max-width: 30% !important;
+    // margin-bottom: 12%;
+}
+
+// Footer
+footer {
+    height: 10%;
+    box-shadow: 0px 0px 20px #ccccccc7 !important;
+    background-color: white !important;
+}
+
+.v-main {
+    padding: 0px 0px 5% !important;
+}
+
+.v-list-item__title {
+    font-size: 1.5rem !important;
+}
+
+// IPAD
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    // Lista de pokedex
+    .main-container {
+        max-width: 70% !important;
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: hidden;
+
+        ::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+
+        .v-list {
+            padding: 1%;
+            overflow-y: scroll !important;
+            max-height: 800px;
+        }
+
+        .item {
+            padding-left: 5%;
+            padding-right: 5%;
+            margin-bottom: 2%;
+            box-shadow: 1px 1px 10px #cccccc61;
+
+            .text--left {
+                text-align: left;
+                margin: auto;
+            }
+
+            .text--left::first-letter {
+                text-transform: uppercase;
+            }
+
+            .text--rigth {
+                text-align: right;
+                padding: 1% !important;
+            }
+        }
+
+        @media only screen and (max-device-height: 1366px) {
+            .v-list {
+                max-height: 840px !important;
+            }
+        }
+    }
+
+    // .v-main {
+    //     padding: 0px 0px 85px !important;
+    //     margin-bottom: 2%;
+    // }
+
+    .v-list-item__title {
+        font-size: 1.3rem !important;
+    }
+
+    footer {
+        box-shadow: 0px 0px 8px #afacac9c !important;
+    }
+}
+
+// IPAD PRO
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+    // Lista de pokedex
+    .main-container {
+        max-width: 70% !important;
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: hidden;
+
+        ::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+
+        .v-list {
+            padding: 1%;
+            overflow-y: scroll !important;
+            // max-height: 890px;
+        }
+
+        .item {
+            padding-left: 5%;
+            padding-right: 5%;
+            margin-bottom: 2%;
+            box-shadow: 1px 1px 10px #cccccc61;
+
+            .text--left {
+                text-align: left;
+                margin: auto;
+            }
+
+            .text--left::first-letter {
+                text-transform: uppercase;
+            }
+
+            .text--rigth {
+                text-align: right;
+                padding: 1% !important;
+            }
+        }
+
+        @media only screen and (max-device-height: 1366px) {
+            .v-list {
+                max-height: 70em !important;
+            }
+        }
+    }
+
+    // .v-main {
+    //     padding: 0px 0px 85px !important;
+    //     margin-bottom: 2%;
+    // }
+
+    .v-list-item__title {
+        font-size: 1.3rem !important;
+    }
+
+    footer {
+        box-shadow: 0px 0px 8px #afacac9c !important;
+    }
+}
+
+// Iphone
+@media only screen and (min-device-width: 280px) and (max-device-width: 667px) {
+    // Lista de pokedex
+    .main-container {
+        max-width: 90% !important;
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: hidden;
+
+        ::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+
+        .v-list {
+            padding: 1%;
+            overflow-y: scroll !important;
+            // max-height: 400px;
+        }
+
+        .item {
+            padding-left: 5%;
+            padding-right: 5%;
+            margin-bottom: 2%;
+            font-weight: bold;
+            box-shadow: 1px 1px 10px #cccccc61;
+
+            .text--left {
+                text-align: left;
+                margin: auto;
+            }
+
+            .text--left::first-letter {
+                text-transform: uppercase;
+            }
+
+            .text--rigth {
+                text-align: right;
+                padding: 1% !important;
+            }
+        }
+
+        @media only screen and (max-device-height: 823px) {
+            .v-list {
+                max-height: 640px !important;
+            }
+        }
+
+        @media only screen and (max-device-height: 812px) {
+            .v-list {
+                max-height: 630px !important;
+            }
+        }
+
+        @media only screen and (max-device-height: 736px) {
+            .v-list {
+                max-height: 550px !important;
+            }
+        }
+
+        @media only screen and (max-device-height: 731px) {
+            .v-list {
+                max-height: 560px !important;
+            }
+        }
+
+        @media only screen and (max-device-height: 667px) {
+            .v-list {
+                max-height: 500px !important;
+            }
+        }
+
+        @media only screen and (max-device-height: 640px) {
+            .v-list {
+                max-height: 470px !important;
+            }
+        }
+
+        @media only screen and (max-device-height: 568px) {
+            .v-list {
+                max-height: 415px !important;
+            }
+            .v-list-item__title {
+                font-size: 1rem !important;
+            }
+            .v-icon {
+                font-size: 1.8rem !important;
+            }
+        }
+    }
+
+    .v-list-item__title {
+        font-size: 1.3rem !important;
+    }
+
+    // .v-main {
+    //     padding: 0px 0px 100px !important;
+    // }
+
+    footer {
+        box-shadow: 0px 0px 8px #afacac9c !important;
+    }
+}

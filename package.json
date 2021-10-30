@@ -1,0 +1,31 @@
+{
+  "name": "pokemon-global66",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "axios": "^0.24.0",
+    "core-js": "^3.15.1",
+    "nuxt": "^2.15.7",
+    "nuxt-clipboard": "0.0.6",
+    "nuxt-clipboard2": "^0.2.1",
+    "vue-axios": "^3.3.7",
+    "vue-clipboard2": "^0.3.3",
+    "vuetify": "^2.5.5"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.12.1",
+    "@vue/test-utils": "^1.2.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^27.0.5",
+    "jest": "^27.0.5",
+    "vue-jest": "^3.0.4"
+  }
+}
