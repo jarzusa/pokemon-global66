@@ -8,10 +8,6 @@ export const state = () => ({
 
 // Getters
 export const getters = {
-    getFavorite(state, id) {
-        let exist = state.favorites.indexOf(id);
-        return exist ? true : false
-    },
     getAllFavorites(state) {
         return state.favorites
     },

@@ -29,7 +29,7 @@
               </v-col>
               <v-col cols="2" class="text--rigth">
                 <v-list-item-icon>
-                  <v-icon large :color="getColor(pokemon)" :key="i"
+                  <v-icon large :color="getColor(pokemon.fav)" :key="i"
                     >mdi-star</v-icon
                   >
                 </v-list-item-icon>
@@ -45,17 +45,16 @@
       </v-list-item-group>
     </v-list>
 
-    <!-- <div v-if="list.length > 0">Si hay datos {{ list }}</div>
-    <div v-else>No hay datos</div> -->
-
     <v-dialog v-model="dialog" persistent max-width="850">
       <v-card>
         <div class="back-wallpaper-pokedex">
           <v-card-title class="text-h5">
             <v-spacer></v-spacer>
-            <v-icon>mdi-close-circle</v-icon>
+            <v-icon @click="dialog = false">mdi-close-circle</v-icon>
           </v-card-title>
-          <center><v-img class="imgPokedex" :src="urlImg"></v-img></center>
+          <center>
+            <v-img class="imgPokedex" :src="urlImg" :lazy-src="urlImg"></v-img>
+          </center>
         </div>
         <v-card-text class="mt-7 description">
           <v-row>
@@ -87,14 +86,15 @@
             color="#F22539"
             elevation="0"
             rounded
-            @click="copySomething(name)"
+            v-clipboard:copy="message"
+            v-clipboard:success="onCopy"
+            v-clipboard:error="onError"
           >
-            <!-- @click="dialog = false" -->
             Share to my friends
           </v-btn>
           <v-spacer></v-spacer>
           <v-btn elevation="0" rounded color="white" @click="dialog = false">
-            <v-icon @click="addFavorite()" large color="grey lighten-1"
+            <v-icon @click="addFavorite()" :color="getColor(fav)" large
               >mdi-star</v-icon
             >
           </v-btn>
@@ -128,6 +128,7 @@ export default {
       height: "",
       weight: "",
       types: [],
+      fav: false,
       urlImg:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
       idPokedex: null,
@@ -137,32 +138,21 @@ export default {
     this.getPokemons();
   },
   computed: {
-    favorites() {
-      return this.$store.getters["getAllFavorites"];
-    },
     list() {
       return this.$store.getters["getListAll"];
     },
   },
   methods: {
-    async copySomething(text) {
-      try {
-        await this.$copyText(this.message);
-      } catch (e) {
-        console.error(e);
-      }
-    },
     onCopy: function (e) {
-      alert(
-        "Acabas de copiar el siguiente texto en el portapapeles: " + e.text
-      );
+      console.log("Portapapeles: " + e.text);
+      this.dialog = false;
     },
     onError: function (e) {
-      alert("No se pudo copiar el texto al portapapeles");
+      console.log("No se pudo copiar el texto al portapapeles");
       console.log(e);
     },
-    getColor(pokemon) {
-      if (pokemon.fav) {
+    getColor(fav) {
+      if (fav) {
         return "#ECA539";
       } else {
         return "grey lighten-1";
@@ -202,6 +192,19 @@ export default {
       this.types = item.types;
       this.urlImg = item.sprites?.other["official-artwork"].front_default;
       this.idPokedex = item.name;
+      let existFav = this.$store.getters["getAllFavorites"].filter(
+        (p) => p === item.name
+      );
+      this.fav = existFav.length < 1 ? false : true;
+      console.log(this.fav);
+      this.message =
+        "Name: " +
+        this.name +
+        ", Height: " +
+        this.height +
+        ", Weight: " +
+        this.weight +
+        "";
     },
     addFavorite() {
       if (this.idPokedex != null) {
